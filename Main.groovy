@@ -1,14 +1,15 @@
-import com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine
-import com.neuronrobotics.bowlerstudio.IStageReceiver
 
-File xml = ScriptingEngine.fileFromGit(
+File xml = com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine.fileFromGit(
 	"https://github.com/CommonWealthRobotics/CaDoodle-script.git", 
 	"MainWindow.fxml")
-class MainWindow extends javafx.scene.control.Tab implements IStageReceiver{
+File icon = com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine.fileFromGit(
+	"https://github.com/CommonWealthRobotics/CaDoodle-script.git", 
+	"SourceIcon.png")
+
+class MainWindow extends javafx.scene.control.Tab implements com.neuronrobotics.bowlerstudio.IStageReceiver{
 	void receiveStage(javafx.stage.Stage stage,javafx.scene.Scene scene) {
 		println "Cadoodle recived stage";
 	}
-	
 }
 javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(xml.toURI().toURL());
 javafx.scene.layout.Pane newLoadedPane =  loader.load();
