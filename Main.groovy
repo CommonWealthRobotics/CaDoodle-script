@@ -1,3 +1,5 @@
+import eu.mihosoft.vrl.v3d.CSG
+println "Cadoodle Start Up";
 
 File xml = com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine.fileFromGit(
 	"https://github.com/CommonWealthRobotics/CaDoodle-script.git", 
@@ -11,6 +13,7 @@ class MainWindow extends javafx.scene.control.Tab implements com.neuronrobotics.
 		println "Cadoodle recived stage";
 	}
 }
+
 javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(xml.toURI().toURL());
 javafx.scene.layout.Pane newLoadedPane =  loader.load();
 // Create a tab
